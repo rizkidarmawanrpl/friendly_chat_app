@@ -1,4 +1,5 @@
 class Strings {
-  static const title   = "FriendlyChat";
-  static const nameVal = "Rizki Darmawan";
+  static const titleApp  = 'FriendlyChat';
+  static const titleChat = 'Friendly Chat';
+  static const nameVal   = 'Rizki Darmawan';
 }

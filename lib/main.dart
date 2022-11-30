@@ -14,7 +14,7 @@ class FriendlyChatApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: Strings.title,
+        title: Strings.titleApp,
         theme: defaultTargetPlatform == TargetPlatform.iOS? Themes.iOS: Themes.android,
         home : const ChatScreen());
   }
