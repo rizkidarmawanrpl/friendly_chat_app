@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:friendly_chat_app/src/config/values/strings.dart';
 
 class ChatMessageWidget extends StatelessWidget {
-  const ChatMessageWidget({super.key, required this.text, required this.animationController});
-
   final String text;
   final AnimationController animationController;
+
+  const ChatMessageWidget({
+    super.key,
+    required this.text,
+    required this.animationController
+  });
+
   final String _name = Strings.nameVal;
 
   @override
@@ -28,19 +33,20 @@ class ChatMessageWidget extends StatelessWidget {
               ),
             ),
             Expanded(
-                child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children          : <Widget>[
-                Text(
-                  _name,
-                  style: Theme.of(context).textTheme.subtitle1,
-                ),
-                Container(
-                  margin: const EdgeInsets.only(top: 5.0),
-                  child : Text(text),
-                ),
-              ],
-            )),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children          : <Widget>[
+                  Text(
+                    _name,
+                    style: Theme.of(context).textTheme.subtitle1,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(top: 5.0),
+                    child : Text(text),
+                  ),
+                ],
+              )
+            ),
           ],
         ),
       ),

@@ -12,9 +12,9 @@ class ChatScreen extends StatefulWidget {
 }
 
 class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
-  final List<ChatMessageWidget> _messages = <ChatMessageWidget>[];
+  final List<ChatMessageWidget> _messages     = <ChatMessageWidget>[];
   final TextEditingController _textController = TextEditingController();
-  bool _isComposing = false;
+  bool  _isComposing                          = false;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
             const Divider(height: 1.0),
             Container(
               decoration: BoxDecoration(color: Theme.of(context).cardColor),
-              child: _buildTextComposer(),
+              child     : _buildTextComposer(),
             )
           ],
         ),
@@ -63,27 +63,27 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
   Widget _buildTextComposer() {
     return IconTheme(
       data: IconThemeData(
-        color: Theme.of(context).colorScheme.secondary,
+        color: Theme.of(context).colorScheme.primary,
       ),
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: Row(
+        child : Row(
           children: [
             Flexible(
               child: TextField(
                 controller: _textController,
-                onChanged: (String text) {
+                onChanged : (String text) {
                   setState(() {
                     _isComposing = text.isNotEmpty;
                   });
                 },
                 onSubmitted: _handleSubmited,
-                decoration: const InputDecoration.collapsed(hintText: 'Send a message'),
+                decoration : const InputDecoration.collapsed(hintText: 'Send a message'),
               ),
             ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 4.0),
-              child: Themes.isIos(context)
+              child : Themes.isIos(context)
                   ? CupertinoButton(
                       onPressed: _isComposing
                           ? () => _handleSubmited(_textController.text)
@@ -91,7 +91,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                       child: const Text("Send"),
                     )
                   : IconButton(
-                      icon: const Icon(Icons.send),
+                      icon     : const Icon(Icons.send),
                       onPressed: _isComposing
                           ? () => _handleSubmited(_textController.text)
                           : null,
@@ -104,16 +104,16 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
   }
 
   void _handleSubmited(String text) {
-    if (text.trim() != '') {
+    if (text.trim().isNotEmpty) {
       _textController.clear();
       setState(() {
         _isComposing = false;
       });
       ChatMessageWidget message = ChatMessageWidget(
-        text: text,
+        text               : text,
         animationController: AnimationController(
           duration: const Duration(milliseconds: 700),
-          vsync: this,
+          vsync   : this,
         ),
       );
       setState(() {
