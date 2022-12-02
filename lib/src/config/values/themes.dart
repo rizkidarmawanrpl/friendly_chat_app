@@ -27,9 +27,7 @@ TextTheme basicTextTheme(TextTheme base) {
       color: const Color(0xFF807A6B)
     )
   );
-}
-
-  
+}  
 
 class Themes {
   static final ThemeData iOS = ThemeData(
@@ -39,25 +37,9 @@ class Themes {
   );
 
   static final ThemeData android = ThemeData(
-    primarySwatch: Colors.purple,
-    /* colorScheme  : const ColorScheme.light(brightness: Brightness.light), */
-    primaryColor: const Color(0xffce107c),
-    indicatorColor: const Color(0xFF807A6B),
-    scaffoldBackgroundColor: const Color(0xFFF5F5F5),
-    iconTheme: const IconThemeData(
-      color: Colors.white,
-      size: 20.0,
-    ),
-    backgroundColor: Colors.white,
-    tabBarTheme: base.tabBarTheme.copyWith(
-      labelColor: const Color(0xffce107c),
-      unselectedLabelColor: Colors.grey,
-    )
-  );
-
-  static final ThemeData customTheme = base.copyWith(
     // textTheme: basicTextTheme(base.textTheme),
-    primaryColor: const Color(0xffce107c),
+    primarySwatch: Colors.teal,
+    primaryColor: const Color.fromARGB(255, 233, 4, 23),
     indicatorColor: const Color(0xFF807A6B),
     scaffoldBackgroundColor: const Color(0xFFF5F5F5),
     iconTheme: const IconThemeData(
