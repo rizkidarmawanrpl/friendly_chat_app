@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:friendly_chat_app/src/config/values/strings.dart';
 import 'package:friendly_chat_app/src/config/values/themes.dart';
-import 'package:friendly_chat_app/src/ui/widget/chat_message_widget.dart';
+import 'package:friendly_chat_app/src/ui/widgets/chat_message_widget.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
