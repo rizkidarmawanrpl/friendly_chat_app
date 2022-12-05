@@ -20,14 +20,19 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title    : const Center(child: Text(Strings.titleChat)),
-        elevation: Themes.isIos(context) ? 0.0: 4.0,
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.menu),
+        ),
+        title: const Center(child: Text(Strings.titleChat)),
+        elevation: 0.0,
+        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.add))],
       ),
       body: Container(
         decoration: Themes.isIos(context)
             ? const BoxDecoration(
                 border: Border(
-                  top: BorderSide(color: Colors.grey),
+                  top: BorderSide(color: Colors.red),
                 ),
               )
             : null,
@@ -78,7 +83,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                   });
                 },
                 onSubmitted: _handleSubmited,
-                decoration : const InputDecoration.collapsed(hintText: 'Send a message'),
+                decoration : const InputDecoration.collapsed(hintText: Strings.sendAMessage),
               ),
             ),
             Container(
